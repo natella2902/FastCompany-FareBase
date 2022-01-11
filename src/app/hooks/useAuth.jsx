@@ -127,7 +127,7 @@ export const AuthProvider = ({ children }) => {
     async function updateUser(data) {
         try {
             const { content } = await userServices.update(data);
-            setUser((prevState) => ({ ...prevState, content }));
+            setUser(content);
             setLoading(false);
         } catch (error) {
             catcherErrors(error);
